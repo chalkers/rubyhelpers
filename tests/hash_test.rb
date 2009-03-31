@@ -18,4 +18,10 @@ class HashTest < Test::Unit::TestCase
     assert(hash_one.first.second)
   end
 
+  def test_hash_has_method
+    hash_one = { "first" => nil }
+    assert(hash_one.first_exists?)
+    assert(!hash_one.second_exists?)  
+  end
+
 end
