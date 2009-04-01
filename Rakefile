@@ -1,8 +1,10 @@
+task :default => :test
+
 require 'rubygems'
 require 'rake'
 require 'echoe'
  
-Echoe.new('rubyhelpers', '0.1.0') do |p|
+Echoe.new('rubyhelpers', '0.1.1') do |p|
   p.description    = "Ruby Helpers for Object, String and Hash. Ideal for use with lightweight frameworks like Sinatra."
   p.url            = "http://github.com/chalkers/rubyhelpers"
   p.author         = "Andrew Chalkley"

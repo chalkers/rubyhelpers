@@ -6,12 +6,12 @@ RubyHelpers a set of helpers for Ruby objects such as Object, String and Hash. I
 
   gem install chalkers-rubyhelpers --source http://gems.github.com
 
-== Usage
+== Object Helpers Usage
 
-== Object Helpers
+Following is an overview of Object#blank?, String#to_html, Hash dot notation and Hash#{key}_exists?
 
 == Object#blank?
-From http://redhanded.hobix.com/inspect/objectBlank.html
+Implementation from http://redhanded.hobix.com/inspect/objectBlank.html
 
   require 'rubyhelpers'
   "".blank? #=> true
@@ -28,12 +28,13 @@ Uses RedCloth to format textile to HTML
   "h1. %_*Hello Word!*_%".to_html #=> "<h1><span><em><strong>Hello World!</strong></em></span></h1>"
 
 == Hash Dot Notation and {key}_exists?
-Accesses hash values via dot notation
+Accesses hash values via dot notation and checking if attributes exist or not.
 
   require 'rubyhelpers'
   person = { "first_name" => "Andrew", "last_name" => "Chalkley", "phone_numbers" => {"home" => "555-555", "mobile" => "555-123"} }
   person.first_name #=> "Andrew"
   person.phone_numbers.home #=> "555-555"
+  
   person.phone_numbers.mobile_exists? #=> true
   person.phone_numbers.office_exists? #=> false
   person.age_exists? #=> false
