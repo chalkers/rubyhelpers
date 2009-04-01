@@ -4,7 +4,8 @@ RubyHelpers a set of helpers for Ruby objects such as Object, String and Hash. I
 
 == Install
 
-  gem install chalkers-rubyhelpers --source http://gems.github.com
+  sudo gem install rubyhelpers
+  sudo gem install chalkers-rubyhelpers --source http://gems.github.com
 
 == Object Helpers Usage
 
