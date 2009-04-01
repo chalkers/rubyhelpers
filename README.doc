@@ -1,0 +1,63 @@
+== RubyHelpers
+
+RubyHelpers a set of helpers for Ruby objects such as Object, String and Hash. Ideal for use with lightweight frameworks like Sinatra that don't have all the bells and whistles of Rails.
+
+== Install
+
+  gem install chalkers-rubyhelpers --source http://gems.github.com
+
+== Usage
+
+== Object Helpers
+
+== Object#blank?
+From http://redhanded.hobix.com/inspect/objectBlank.html
+
+  require 'rubyhelpers'
+  "".blank? #=> true
+  false.blank? #=> true
+  0.blank? #=> true
+  nil.blank? #=> true
+  [].blank? #=> true
+  {}.blank? #=>true
+
+== String#to_html
+Uses RedCloth to format textile to HTML
+
+  require 'rubyhelpers'
+  "h1. %_*Hello Word!*_%".to_html #=> "<h1><span><em><strong>Hello World!</strong></em></span></h1>"
+
+== Hash Dot Notation and {key}_exists?
+Accesses hash values via dot notation
+
+  require 'rubyhelpers'
+  person = { "first_name" => "Andrew", "last_name" => "Chalkley", "phone_numbers" => {"home" => "555-555", "mobile" => "555-123"} }
+  person.first_name #=> "Andrew"
+  person.phone_numbers.home #=> "555-555"
+  person.phone_numbers.mobile_exists? #=> true
+  person.phone_numbers.office_exists? #=> false
+  person.age_exists? #=> false
+
+This is really handy when parsing JSON
+
+  require 'rubyhelpers'
+  requite 'json'
+  person = JSON.parse('{"name": "Andrew Chalkley"}')
+  person.name #=> "Andrew Chalkley"
+
+== License
+THE MIT LICENSE
+
+Copyright (c) 2009 Andrew Chalkley
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+http://creativecommons.org/licenses/MIT/
+
+
